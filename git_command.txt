@@ -1,0 +1,275 @@
+[junior@fedora ~]$  mkdir project 
+[junior@fedora ~]$ cd project/
+[junior@fedora project]$ ls -a
+.  ..
+[junior@fedora project]$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/junior/project/.git/
+[junior@fedora project]$ ls -a
+.  ..  .git
+[junior@fedora project]$ git config --global user.name "junior"
+[junior@fedora project]$ git config --global user.email "kshitij.choubey.1331@gmail.com"
+[junior@fedora project]$ 
+[junior@fedora project]$ git config --global user.name
+junior
+[junior@fedora project]$ git config --global user.email
+kshitij.choubey.1331@gmail.com
+[junior@fedora project]$ 
+[junior@fedora project]$ echo "edited by master " > ekfile.txt
+[junior@fedora project]$ ls
+ekfile.txt
+[junior@fedora project]$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	ekfile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[junior@fedora project]$ git add -A
+[junior@fedora project]$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   ekfile.txt
+
+[junior@fedora project]$ git commit -m "first commit"
+[master (root-commit) 363f2bb] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ekfile.txt
+[junior@fedora project]$ ssh-keygen -t ecdsa -C "kshitij.choubey.1331@gmail.com"
+Generating public/private ecdsa key pair.
+Enter file in which to save the key (/home/junior/.ssh/id_ecdsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/junior/.ssh/id_ecdsa
+Your public key has been saved in /home/junior/.ssh/id_ecdsa.pub
+The key fingerprint is:
+SHA256:aPSN+FhBLwWGH4ZQJrnRmE+gp4A6WySjwYOhwnBgDrM kshitij.choubey.1331@gmail.com
+The key's randomart image is:
++---[ECDSA 256]---+
+|*o. +Ooo+..      |
+|@= .=o=ooo       |
+|E=o .=.oo..      |
+|+*.o...+.=       |
+|+ o   + S .      |
+| +   . +         |
+|.     . .        |
+|                 |
+|                 |
++----[SHA256]-----+
+[junior@fedora project]$ 
+[junior@fedora project]$ ssh-add ~/.ssh/id_ecdsa
+Identity added: /home/junior/.ssh/id_ecdsa (kshitij.choubey.1331@gmail.com)
+[junior@fedora project]$ man eval
+[junior@fedora project]$ cat ~/.ssh/id_ecdsa.pub 
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBI3GZqGPaEwmuc/5idees38y7i2CFxQBnG2NZN5WiCXMGQCTD+/g6LiSv74PMmR47x5BazLsndN3vhdRmnmI2sA= kshitij.choubey.1331@gmail.com
+[junior@fedora project]$ git remote add origin git@github.com:KC1331/project-1.git
+[junior@fedora project]$ 
+[junior@fedora project]$ git push -u origin master
+To github.com:KC1331/project-1.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'github.com:KC1331/project-1.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+[junior@fedora project]$ git remote set-url origin git@github.com:KC1331/new_project.git
+[junior@fedora project]$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 237 bytes | 237.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:KC1331/new_project.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+[junior@fedora project]$ 
+[junior@fedora project]$ cd ..
+[junior@fedora ~]$ mkdir gaurav_project
+[junior@fedora ~]$ cd gaurav_project/
+[junior@fedora gaurav_project]$ l s-a
+bash: l: command not found...
+[junior@fedora gaurav_project]$ ls -a
+.  ..
+[junior@fedora gaurav_project]$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/junior/gaurav_project/.git/
+[junior@fedora gaurav_project]$ 
+[junior@fedora gaurav_project]$ ls -a
+.  ..  .git
+[junior@fedora gaurav_project]$ 
+[junior@fedora gaurav_project]$ 
+[junior@fedora gaurav_project]$ git pull git@github.com:gauravkhandate/new_project.git
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 211 bytes | 211.00 KiB/s, done.
+From github.com:gauravkhandate/new_project
+ * branch            HEAD       -> FETCH_HEAD
+[junior@fedora gaurav_project]$ ls
+ekfile.txt
+[junior@fedora gaurav_project]$ git branch junior
+[junior@fedora gaurav_project]$ git branch
+  junior
+* master
+[junior@fedora gaurav_project]$ git checkout junior
+Switched to branch 'junior'
+[junior@fedora gaurav_project]$ git branch
+* junior
+  master
+[junior@fedora gaurav_project]$ ls
+ekfile.txt
+[junior@fedora gaurav_project]$ echo "editted by junior from junior pc ">>ekfile.txt
+[junior@fedora gaurav_project]$ ls
+ekfile.txt
+[junior@fedora gaurav_project]$ cat ekfile.txt 
+edited by master
+editted by junior from junior pc 
+[junior@fedora gaurav_project]$ git status
+On branch junior
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ekfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[junior@fedora gaurav_project]$ git add -A
+[junior@fedora gaurav_project]$ git status
+On branch junior
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   ekfile.txt
+
+[junior@fedora gaurav_project]$ git commit -m "commited by junior from junior"
+[junior cf8f1ec] commited by junior from junior
+ 1 file changed, 1 insertion(+)
+[junior@fedora gaurav_project]$ git remote add gaurav_hub git@github.com:gauravkhandate/new_project.git
+[junior@fedora gaurav_project]$ git push -u gaurav_hub junior
+ERROR: Permission to gauravkhandate/new_project.git denied to KC1331.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[junior@fedora gaurav_project]$ cat ~/.ssh/id_ed25519.pub 
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILNr3N7BqAvrnXNUHMPTy+VcFPpLl8QbZNr5M6s8lbby kshitij.choubey.1331@gmail.com
+[junior@fedora gaurav_project]$ git push -u gaurav_hub junior
+ERROR: Permission to gauravkhandate/new_project.git denied to KC1331.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[junior@fedora gaurav_project]$ git push -u gaurav_hub junior
+ERROR: Permission to gauravkhandate/new_project.git denied to KC1331.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[junior@fedora gaurav_project]$ ssh-keygen -t ed25519 -c "gameisback619@gmail.com"
+Too many arguments.
+usage: ssh-keygen [-q] [-a rounds] [-b bits] [-C comment] [-f output_keyfile]
+                  [-m format] [-N new_passphrase] [-O option]
+                  [-t dsa | ecdsa | ecdsa-sk | ed25519 | ed25519-sk | rsa]
+                  [-w provider] [-Z cipher]
+       ssh-keygen -p [-a rounds] [-f keyfile] [-m format] [-N new_passphrase]
+                   [-P old_passphrase] [-Z cipher]
+       ssh-keygen -i [-f input_keyfile] [-m key_format]
+       ssh-keygen -e [-f input_keyfile] [-m key_format]
+       ssh-keygen -y [-f input_keyfile]
+       ssh-keygen -c [-a rounds] [-C comment] [-f keyfile] [-P passphrase]
+       ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
+       ssh-keygen -B [-f input_keyfile]
+       ssh-keygen -D pkcs11
+       ssh-keygen -F hostname [-lv] [-f known_hosts_file]
+       ssh-keygen -H [-f known_hosts_file]
+       ssh-keygen -K [-a rounds] [-w provider]
+       ssh-keygen -R hostname [-f known_hosts_file]
+       ssh-keygen -r hostname [-g] [-f input_keyfile]
+       ssh-keygen -M generate [-O option] output_file
+       ssh-keygen -M screen [-f input_file] [-O option] output_file
+       ssh-keygen -I certificate_identity -s ca_key [-hU] [-D pkcs11_provider]
+                  [-n principals] [-O option] [-V validity_interval]
+                  [-z serial_number] file ...
+       ssh-keygen -L [-f input_keyfile]
+       ssh-keygen -A [-a rounds] [-f prefix_path]
+       ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
+                  file ...
+       ssh-keygen -Q [-l] -f krl_file [file ...]
+       ssh-keygen -Y find-principals -s signature_file -f allowed_signers_file
+       ssh-keygen -Y check-novalidate -n namespace -s signature_file
+       ssh-keygen -Y sign -f key_file -n namespace file ...
+       ssh-keygen -Y verify -f allowed_signers_file -I signer_identity
+                  -n namespace -s signature_file [-r revocation_file]
+[junior@fedora gaurav_project]$ ssh-keygen -t ed25519 -C "gameisback619@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/junior/.ssh/id_ed25519): 
+/home/junior/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? n
+[junior@fedora gaurav_project]$ ssh-keygen -t ecdsa -C "gameisback619@gmail.com"
+Generating public/private ecdsa key pair.
+Enter file in which to save the key (/home/junior/.ssh/id_ecdsa): 
+/home/junior/.ssh/id_ecdsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/junior/.ssh/id_ecdsa
+Your public key has been saved in /home/junior/.ssh/id_ecdsa.pub
+The key fingerprint is:
+SHA256:jsQUptW48ot2c4N6jYBfsbTlH+m6qguuwU+vSHfsxn4 gameisback619@gmail.com
+The key's randomart image is:
++---[ECDSA 256]---+
+|      +o         |
+|     +...        |
+|    . ..         |
+|    .o+ .        |
+|   . +o*S  .     |
+|. . o.=o. o      |
+|.o.+.*.=.o .     |
+|.o=.BoBE+ o      |
+|.o.+BXo+o+       |
++----[SHA256]-----+
+[junior@fedora gaurav_project]$ ssh-add ~/.ssh/id_ecdsa
+Identity added: /home/junior/.ssh/id_ecdsa (gameisback619@gmail.com)
+[junior@fedora gaurav_project]$ 
+[junior@fedora gaurav_project]$ cat ~/.ssh/id_ecdsa.pub 
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBG8UuPjRN502zEqmD5prvyVySagGTUn/TBn/HWznCUX56GKCQBKb2IanO7S+ssrql3IExNn5Es4IUQxRrVJQPmo= gameisback619@gmail.com
+[junior@fedora gaurav_project]$ git push -u gaurav_hub junior
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 293 bytes | 293.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'junior' on GitHub by visiting:
+remote:      https://github.com/gauravkhandate/new_project/pull/new/junior
+remote: 
+To github.com:gauravkhandate/new_project.git
+ * [new branch]      junior -> junior
+branch 'junior' set up to track 'gaurav_hub/junior'.
+[junior@fedora gaurav_project]$ 
+
+
